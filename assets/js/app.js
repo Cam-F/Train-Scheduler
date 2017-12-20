@@ -28,7 +28,7 @@ $("#btn-submit").on("click", function () {
     // catching the input
     tName = $(".tName").val();
     destination = $(".destination").val();
-    time = $(".time").val();
+    time = moment($(".time").val(), "HH:mm").format("x");
     freq = $(".freq").val();
 
     // checks
