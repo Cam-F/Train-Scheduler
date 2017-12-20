@@ -13,37 +13,70 @@
         crossorigin="anonymous">
     <!-- LOCAL CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <!-- FIREBASE -->
+    <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
 </head>
 
 <body>
+    <br>
     <div class="container">
         <div class="jumbotron text-center">
             <h1>Train Scheduler</h1>
             <p>PLACEHOLDER</p>
         </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">Current Train Schedule</div>
-            <table class="table">
-                <th class="name">Train Name</th>
-                <th class="destination">Destination</th>
-                <th class="frequency">Frequency</th>
-                <th class="arrival">Next Arrival</th>
-                <th class="minutes">Minutes Away</th>
-                <tbody>
-                    <!-- APPEND INFO HERE -->
-                </tbody>
-            </table>
-            <!-- VV PANEL END VV -->
+        <!-- INFO PANEL -->
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Current Train Schedule</div>
+                    <table class="table">
+                        <th>Train Name</th>
+                        <th>Destination</th>
+                        <th>Frequency</th>
+                        <th>Next Arrival</th>
+                        <th>Minutes Away</th>
+                        <tbody class="trainDisplpay">
+                            <!-- APPEND INFO HERE -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- VV INFO PANEL END VV -->
         </div>
-        
-        <!-- VV CONTAINER END VV -->
+        <div class="row">
+            <!-- INPUT FORM -->
+            <div class="col-xs-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Your Train Info</div>
+                    <div class="panel-body">
+                        <div class="col-xs-12">
+                            <label for="tName">Train Name: </label>
+                            <input type="text" class="form-control tName text-center" aria-describedby="sizing-addon1">
+                            <br>
+                            <label for="destination">Destination: </label>
+                            <input type="text" class="form-control destination text-center" aria-describedby="sizing-addon1">
+                            <br>
+                            <label for="time">First Train Time: </label>
+                            <input type="text" class="form-control time text-center" aria-describedby="sizing-addon1">
+                            <br>
+                            <label for="freq">Frequency: </label>
+                            <input type="text" class="form-control freq text-center" aria-describedby="sizing-addon1">
+                            <br>
+                            <button class="btn btn-default" id="btn-submit" type="submit">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- COL END -->
+        </div>
+        <!-- ROW END -->
     </div>
-
+    <!-- CONTAINER END -->
 
     <!-- JQUERY -->
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
     <!-- JAVASCRIPT -->
-    <script type="text/javascript" src="assets/js.app.js"></script>
+    <script type="text/javascript" src="assets/js/app.js"></script>
 </body>
 
 </html>
