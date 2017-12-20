@@ -60,16 +60,19 @@ database.ref().on("child_added", function (childSnapshot, prevChildKey) {
     var time = childSnapshot.val().time;
     var freq = childSnapshot.val().freq;
 
-    // checks
-    console.log(tName);
-    console.log(destination);
-    console.log(time);
-    console.log(freq);
-    
-    // 2 calculated variables
-    var away;
-    var next;
+    // First Time (pushed back 1 year to make sure it comes before current time)
+    var firstTimeConverted = moment(time, "hh:mm").subtract(1, "years");
+    console.log(firstTimeConverted);
 
+     // Current Time
+     var currentTime = moment();
+     console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm"));
+
+    // Difference between the times
+    var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
+    console.log("DIFFERENCE IN TIME: " + diffTime);
+
+    
     //appending to page
-    $(".table > tbody").append("<tr><td>" + tName + "</td><td>" + destination + "</td><td>" + freq + "</td><td>" + next + "</td><td>" + away + "</td>");
-})
+    $(".table > tbody").append("<tr><td>" + tName + "</td><td>" + destination + "</td><td>" + freq + "</td><td>" +  + "</td><td>" +  + "</td>");
+});
