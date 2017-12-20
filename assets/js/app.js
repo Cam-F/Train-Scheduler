@@ -28,7 +28,7 @@ $("#btn-submit").on("click", function () {
     // catching the input
     tName = $(".tName").val();
     destination = $(".destination").val();
-    time = moment($(".time").val(), "HH:mm").format("x");
+    time = $(".time").val();
     freq = $(".freq").val();
 
     // checks
@@ -49,7 +49,7 @@ $("#btn-submit").on("click", function () {
     $(".form-control").val(" ")
 });
 // Firebase watcher
-database.ref().on("child_added", function (childSnapshot, prevChildKey) {
+database.ref().on("child_added", function (childSnapshot) {
 
     // checks
     // console.log(childSnapshot.val());
@@ -66,13 +66,24 @@ database.ref().on("child_added", function (childSnapshot, prevChildKey) {
 
      // Current Time
      var currentTime = moment();
-     console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm"));
+     console.log("CURRENT TIME: " + moment(currentTime).format("HH:mm"));
 
     // Difference between the times
     var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
     console.log("DIFFERENCE IN TIME: " + diffTime);
 
-    
+    // Time apart (remainder)
+    var tRemainder = diffTime % freq;
+    console.log(tRemainder);
+
+    // Minute Until Train
+    var tMinutesTillTrain = freq - tRemainder;
+    console.log("MINUTES TILL TRAIN: " + tMinutesTillTrain);
+
+     // Next Train
+     var nextTrain = moment().add(tMinutesTillTrain, "minutes");
+     console.log("ARRIVAL TIME: " + moment(nextTrain).format("HH:mm"));
+
     //appending to page
-    $(".table > tbody").append("<tr><td>" + tName + "</td><td>" + destination + "</td><td>" + freq + "</td><td>" +  + "</td><td>" +  + "</td>");
+    $(".table").append("<tr><td>" + tName + "</td><td>" + destination + "</td><td>" + freq + "</td><td>" + moment(nextTrain).format("HH:mm a") + "</td><td>" + tMinutesTillTrain + "</td>");
 });
