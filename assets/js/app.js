@@ -65,6 +65,11 @@ database.ref().on("child_added", function (childSnapshot, prevChildKey) {
     console.log(destination);
     console.log(time);
     console.log(freq);
+    
+    // 2 calculated variables
+    var away;
+    var next;
 
-    // 
+    //appending to page
+    $(".table > tbody").append("<tr><td>" + tName + "</td><td>" + destination + "</td><td>" + freq + "</td><td>" + next + "</td><td>" + away + "</td>");
 })
