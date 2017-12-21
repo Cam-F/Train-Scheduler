@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Train Scheduler</title>
+    <title>Subway Slider</title>
     <!-- RESET -->
     <link rel="stylesheet" href="assets/css/reset.css">
     <!-- BOOTSTRAP -->
@@ -23,12 +23,11 @@
     <br>
     <div class="container">
         <div class="jumbotron text-center">
-            <h1>Train Scheduler</h1>
-            <p>PLACEHOLDER</p>
+            <h1 class="jhead">Subway Slider</h1>
         </div>
         <!-- INFO PANEL -->
         <div class="row">
-            <div class="col-xs-12">
+            <div class="col-xs-12 col-md-8">
                 <div class="panel panel-default">
                     <div class="panel-heading">Current Train Schedule</div>
                     <table class="table">
@@ -44,25 +43,25 @@
                 </div>
             </div>
             <!-- VV INFO PANEL END VV -->
-        </div>
-        <div class="row">
+        <!-- </div> -->
+        <!-- <div class="row"> -->
             <!-- INPUT FORM -->
-            <div class="col-xs-12">
+            <div class="col-xs-12 col-md-4">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Your Train Info</div>
+                    <div class="panel-heading">New Train Info</div>
                     <div class="panel-body">
                         <div class="col-xs-12">
                             <label for="tName">Train Name: </label>
-                            <input type="text" class="form-control tName text-center" aria-describedby="sizing-addon1">
+                            <input type="text" class="form-control tName" aria-describedby="sizing-addon1">
                             <br>
                             <label for="destination">Destination: </label>
-                            <input type="text" class="form-control destination text-center" aria-describedby="sizing-addon1">
+                            <input type="text" class="form-control destination" aria-describedby="sizing-addon1">
                             <br>
                             <label for="time">First Train Time: (HH:mm) - Military Time</label>
-                            <input type="text" class="form-control time text-center" aria-describedby="sizing-addon1">
+                            <input type="text" class="form-control time" aria-describedby="sizing-addon1">
                             <br>
                             <label for="freq">Frequency: (mins)</label>
-                            <input type="text" class="form-control freq text-center" aria-describedby="sizing-addon1">
+                            <input type="text" class="form-control freq" aria-describedby="sizing-addon1">
                             <br>
                             <button class="btn btn-default" id="btn-submit" type="submit">Submit</button>
                         </div>
