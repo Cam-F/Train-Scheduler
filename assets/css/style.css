@@ -1,5 +1,5 @@
 body {
-    background-color: black;
+    background-color: #303030;
 }
 
 .jumbotron {
@@ -15,8 +15,14 @@ body {
     background: rgba(0, 0, 0, .5);
 }
 
+th {
+    font-weight: bold;
+    text-align: center;
+}
+
 .panel-default>.panel-heading {
     background-color: #e7cc42;
+    font-weight: bold;
 }
 
 #btn-submit {
